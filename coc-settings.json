@@ -1,0 +1,14 @@
+{
+  "go.goplsOptions": {
+    "staticcheck": true,
+    "analyses": {
+      "infertypeargs": false,
+      "SA1029": false,
+      "QF1003": false,
+      "ST1005": false,
+      "S1025": false,
+      "ST1017": false,
+    }
+  },
+  "typescript.showDeprecated": false
+}
