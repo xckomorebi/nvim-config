@@ -62,6 +62,10 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go'
 Plug 'nvim-neotest/nvim-nio'
 
+" folke
+Plug 'folke/noice.nvim'
+Plug 'rcarriga/nvim-notify'
+
 call plug#end()
 
 " colorscheme
