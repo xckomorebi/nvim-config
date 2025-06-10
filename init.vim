@@ -34,9 +34,10 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim'
+Plug 'github/copilot.vim'
 
 " coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim'
 Plug 'sheerun/vim-polyglot'
 
 " telescope
@@ -99,6 +100,7 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 source ~/.vim/coc.vim
 autocmd BufWritePre *.go :silent call CocAction('format')
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+" autocmd BufEnter *.go set syntax=off
 
 " keymapping
 let mapleader=" "

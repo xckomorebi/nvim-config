@@ -10,5 +10,6 @@
       "ST1017": false,
     }
   },
-  "typescript.showDeprecated": false
+  "typescript.showDeprecated": false,
+  "snippets.ultisnips.pythonPrompt": false
 }
