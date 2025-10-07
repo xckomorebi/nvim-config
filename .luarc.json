@@ -7,11 +7,11 @@
                 "lua/?.lua",
                 "lua/?/init.lua"
             ],
-            "pathStrict": true
+            "pathStrict": false
         },
         "workspace": {
             "library": [
-                "~/.local/share/nvim-v2/lazy/lazy.nvim",
+                "~/.local/share/nvim/lazy",
                 "~/github/neovim",
                 "${3rd}/luv/library",
                 "${3rd}/luassert/library"

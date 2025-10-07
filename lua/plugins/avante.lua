@@ -10,6 +10,11 @@ return {
 		instructions_file = "avante.md",
 		-- for example
 		provider = "copilot",
+		mappings = {
+			suggestion = {
+				accept = "<Tab>"
+			}
+		}
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",

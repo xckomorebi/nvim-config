@@ -9,25 +9,12 @@ return {
 	cmd = "Copilot",
 	event = "InsertEnter",
 
-	-- config = function()
-	-- 	require("copilot").setup({
-	-- 		nes = {
-	-- 			enabled = true,
-	-- 			keymap = {
-	-- 				accept_and_goto = "<leader>p",
-	-- 				accept = false,
-	-- 				dismiss = "<Esc>",
-	-- 			},
+	-- opts = {
+	-- 	suggestion = {
+	-- 		auto_trigger = true,
+	-- 		keymap = {
+	-- 			accept = "<C-i>",
 	-- 		},
-	-- 	})
-	-- end,
-
-	opts = {
-		suggestion = {
-			auto_trigger = true,
-			keymap = {
-				accept = "<C-i>",
-			},
-		},
-	}
+	-- 	},
+	-- }
 }
