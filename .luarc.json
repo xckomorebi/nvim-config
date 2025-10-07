@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
     "Lua": {
         "runtime": {
             "path": [
@@ -7,14 +8,19 @@
                 "lua/?.lua",
                 "lua/?/init.lua"
             ],
-            "pathStrict": false
+            "pathStrict": true
         },
         "workspace": {
             "library": [
-                "~/.local/share/nvim/lazy",
                 "~/github/neovim",
                 "${3rd}/luv/library",
-                "${3rd}/luassert/library"
+                "${3rd}/luassert/library",
+
+                "~/.local/share/nvim/lazy/lazy.nvim",
+                "~/.local/share/nvim/lazy/telescope.nvim",
+                "~/.local/share/nvim/lazy/telescope-live-grep-args.nvim",
+                "~/.local/share/nvim/lazy/nvim-cmp",
+                "~/.local/share/nvim/lazy/lsp-zero.nvim"
             ]
         }
     }
