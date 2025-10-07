@@ -1,17 +1,17 @@
 return {
-	"tpope/vim-fugitive",
+    "tpope/vim-fugitive",
 
-	{
-		"tanvirtin/vgit.nvim",
-		event = "VimEnter",
+    {
+        "tanvirtin/vgit.nvim",
+        event = "VimEnter",
 
-		depedencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("vgit").setup()
-		end,
-	}
+        depedencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            require("vgit").setup()
+        end,
+    }
 
-	-- enabled = false,
+    -- enabled = false,
 }

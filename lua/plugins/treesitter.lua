@@ -4,9 +4,9 @@ return {
     branch = "master",
     build = ":TSUpdate",
 
-	dependencies = {
-		"sharkdp/fd",
-	},
+    dependencies = {
+        "sharkdp/fd",
+    },
 
     config = function()
         require("nvim-treesitter.configs").setup({

@@ -1,6 +1,6 @@
 return {
-	'akinsho/toggleterm.nvim',
-	enabled = false,
-	opts = {},
-	keys = {},
+    'akinsho/toggleterm.nvim',
+    enabled = false,
+    opts = {},
+    keys = {},
 }
