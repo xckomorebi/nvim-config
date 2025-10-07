@@ -20,6 +20,13 @@ return {
         local lga_actions = require('telescope-live-grep-args.actions')
 
         telescope.setup({
+            defaults = {
+                mappings = {
+                    n = {
+                        d = "delete_buffer",
+                    }
+                }
+            },
             extensions = {
                 coc = {},
                 live_grep_args = {
