@@ -17,7 +17,7 @@ return {
 
     config = function()
         local telescope = require("telescope")
-        local lga_actions = require('telescope-live-grep-args.actions')
+        local lga_actions = require("telescope-live-grep-args.actions")
 
         telescope.setup({
             defaults = {
@@ -31,23 +31,23 @@ return {
                 coc = {},
                 live_grep_args = {
                     auto_quoting = true, -- enable/disable auto-quoting
-                    mappings = { -- extend mappings
+                    mappings = {         -- extend mappings
                         i = {
                             ["<C-k>"] = lga_actions.quote_prompt(),
                             ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-                            ["<C-space>"] = lga_actions.to_fuzzy_refine,
                         },
                     },
                 },
             }
         })
 
-        telescope.load_extension('coc')
-        telescope.load_extension('live_grep_args')
+        telescope.load_extension("coc")
+        telescope.load_extension("live_grep_args")
     end,
 
     keys = {
-        { "<leader>fp", find_files_or_git_files,                   desc = "Find files (git-aware)" },
+        { "<leader>fp", "<cmd>Telescope find_files<cr>",           desc = "Find files" },
+        { "<leader>fP", find_files_or_git_files,                   desc = "Find files (git-aware)" },
         { "<leader>fg", "<cmd>Telescope live_grep_args<cr>",       desc = "Live grep" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",              desc = "Buffers" },
         { "<leader>fh", "<cmd>Telescope help_tags<cr>",            desc = "Help tags" },
