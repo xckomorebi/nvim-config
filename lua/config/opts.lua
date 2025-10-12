@@ -24,3 +24,4 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.formatoptions = vim.opt.formatoptions - "o" - "r"

@@ -21,6 +21,7 @@ return {
 
         telescope.setup({
             defaults = {
+                sorting_strategy = "ascending",
                 mappings = {
                     n = {
                         d = "delete_buffer",
