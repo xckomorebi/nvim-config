@@ -22,3 +22,5 @@ vim.o.updatetime = 300
 vim.o.cursorline = true
 vim.o.splitbelow = true
 vim.o.splitright = true
+
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
