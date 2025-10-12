@@ -34,6 +34,8 @@ keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 
 keyset("n", "<F2>", "<Plug>(coc-rename)", { silent = true })
 
+keyset("n", "<leader>tu", "<cmd>ToggleSonoakiTransparency<cr>")
+
 -- Unset keys
 vim.keymap.del("n", "grt")
 vim.keymap.del("n", "grr")
