@@ -1,17 +1,16 @@
 return {
     "tpope/vim-fugitive",
-
+    {
+        "airblade/vim-gitgutter",
+        keys = {
+            { "<leader>hd", "<cmd>Gvdiffsplit<cr>", desc = "Git Diff File" },
+        },
+    },
     {
         "tanvirtin/vgit.nvim",
         event = "VimEnter",
-
-        depedencies = {
-            "nvim-lua/plenary.nvim",
-        },
         config = function()
             require("vgit").setup()
-        end,
-    }
-
-    -- enabled = false,
+        end
+    },
 }

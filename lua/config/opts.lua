@@ -19,3 +19,6 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
 
+vim.o.cursorline = true
+vim.o.splitbelow = true
+vim.o.splitright = true
