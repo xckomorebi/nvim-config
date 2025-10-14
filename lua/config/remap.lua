@@ -36,6 +36,8 @@ keyset("n", "<F2>", "<Plug>(coc-rename)", { silent = true })
 
 keyset("n", "<leader>tu", "<cmd>ToggleSonoakiTransparency<cr>")
 
+keyset("t", "<Esc><Esc>", "<C-\\><C-N>")
+
 -- Unset keys
 vim.keymap.del("n", "grt")
 vim.keymap.del("n", "grr")
