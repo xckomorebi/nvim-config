@@ -20,7 +20,9 @@
                 "~/.local/share/nvim/lazy/telescope.nvim",
                 "~/.local/share/nvim/lazy/telescope-live-grep-args.nvim",
                 "~/.local/share/nvim/lazy/nvim-cmp",
-                "~/.local/share/nvim/lazy/lsp-zero.nvim"
+                "~/.local/share/nvim/lazy/lsp-zero.nvim",
+                "~/.local/share/nvim/lazy/neo-tree.nvim",
+                "~/.local/share/nvim/lazy/sidekick.nvim"
             ]
         }
     }

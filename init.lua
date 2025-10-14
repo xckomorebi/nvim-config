@@ -1,5 +1,9 @@
-require("config.lazy")
-require("config.opts")
-require("config.remap")
-require("config.autocmd")
-require("config.commands")
+if vim.g.vscode then
+    require("config.vscode")
+else
+    require("config.lazy")
+    require("config.opts")
+    require("config.remap")
+    require("config.autocmd")
+    require("config.commands")
+end
