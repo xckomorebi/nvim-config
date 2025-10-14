@@ -29,7 +29,6 @@ return {
                 }
             },
             extensions = {
-                coc = {},
                 live_grep_args = {
                     auto_quoting = true, -- enable/disable auto-quoting
                     mappings = {         -- extend mappings
@@ -50,6 +49,7 @@ return {
         { "<leader>fp", "<cmd>Telescope find_files<cr>",           desc = "Find files" },
         { "<leader>fP", find_files_or_git_files,                   desc = "Find files (git-aware)" },
         { "<leader>fg", "<cmd>Telescope live_grep_args<cr>",       desc = "Live grep" },
+        { "<leader>fs", "<cmd>Telescope git_status<cr>",           desc = "Git status" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",              desc = "Buffers" },
         { "<leader>fh", "<cmd>Telescope help_tags<cr>",            desc = "Help tags" },
         { "<leader>pp", "<cmd>Telescope commands<cr>",             desc = "Commands" },
