@@ -5,5 +5,10 @@ return {
         "edkolev/tmuxline.vim",
     },
 
+    -- opts = {
+    --     options = {
+    --         -- globalstatus = true
+    --     }
+    -- }
     config = true
 }
