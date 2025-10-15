@@ -7,6 +7,7 @@ local function keymap(mode, lhs, vscode_cmd)
 end
 
 vim.g.mapleader = " "
+vim.opt.clipboard = "unnamedplus"
 
 keymap("n", "gr", "editor.action.goToReferences")
 keymap("n", "gi", "editor.action.goToImplementation")

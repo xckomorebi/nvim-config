@@ -8,6 +8,7 @@ return {
                 enabled = true,
             },
         },
+        nes = { enabled = true },
     },
     keys = {
         {
@@ -18,6 +19,7 @@ return {
                     return "<Tab>" -- fallback to normal tab
                 end
             end,
+            mode = { "i", "n" },
             expr = true,
             desc = "Goto/Apply Next Edit Suggestion",
         },

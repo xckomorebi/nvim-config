@@ -1,8 +1,8 @@
 local function find_files_or_git_files()
-    if vim.fn.isdirectory('.git') == 1 then
-        vim.cmd('Telescope git_files')
+    if vim.fn.isdirectory(".git") == 1 then
+        vim.cmd("Telescope git_files")
     else
-        vim.cmd('Telescope find_files')
+        vim.cmd("Telescope find_files")
     end
 end
 

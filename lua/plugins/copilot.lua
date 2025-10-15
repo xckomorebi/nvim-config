@@ -4,17 +4,23 @@ return {
         "copilotlsp-nvim/copilot-lsp",
         init = function()
             vim.g.copilot_nes_debounce = 500
-        end,
+        end
     },
     cmd = "Copilot",
     event = "InsertEnter",
 
-    -- opts = {
-    --     suggestion = {
-    --         auto_trigger = true,
-    --         keymap = {
-    --             accept = "<C-i>",
-    --         },
-    --     },
-    -- }
+    opts = {
+        suggestion = {
+            auto_trigger = true,
+            keymap = {
+                accept = "<Tab>",
+            },
+        },
+        nes = {
+            enabled = true,
+            auto_trigger = true,
+        }
+    },
+
+    enabled = false
 }
