@@ -6,4 +6,5 @@ else
     require("config.remap")
     require("config.autocmd")
     require("config.commands")
+    require("lsp")
 end

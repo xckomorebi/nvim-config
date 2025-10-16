@@ -10,7 +10,7 @@ vim.o.shiftwidth = 4
 vim.o.list = true
 
 vim.opt.listchars = {
-    tab = '▸ ',
+    tab = "▸ ",
     trail = "·",
     leadmultispace = "▏   "
 }
@@ -23,5 +23,5 @@ vim.o.cursorline = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos"
 vim.opt.formatoptions = vim.opt.formatoptions - "o" - "r"

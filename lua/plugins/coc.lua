@@ -9,4 +9,6 @@ return {
     end,
 
     branch = "release",
+
+    enabled = false
 }
