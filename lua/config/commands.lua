@@ -11,16 +11,18 @@ end, {})
 vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
     local current_buf = vim.api.nvim_get_current_buf()
     local buffers = vim.api.nvim_list_bufs()
-    local skip_filetyupes = {
+    local skip_filetypes = {
         "NvimTree",
         "qf"
     }
+
+    local delete_count = 0
 
     for _, buf in ipairs(buffers) do
         if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
             local filetype = vim.bo[buf].filetype
 
-            if vim.tbl_contains(skip_filetyupes, filetype) then
+            if vim.tbl_contains(skip_filetypes, filetype) then
                 -- skip certain filetypes
             elseif vim.bo[buf].modified then
                 local full_path = vim.api.nvim_buf_get_name(buf)
@@ -28,7 +30,12 @@ vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
                 print("Buffer " .. relative_path .. " has unsaved changes. Skipping.")
             else
                 vim.api.nvim_buf_delete(buf, {})
+                delete_count = delete_count + 1
             end
         end
+    end
+
+    if delete_count > 0 then
+        print(delete_count .. " buffers has been deleted!")
     end
 end, {})
