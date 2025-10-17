@@ -18,11 +18,14 @@ vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
 
     for _, buf in ipairs(buffers) do
         if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
-            local filetype = vim.api.nvim_buf_get_option(buf, "filetype")
+            local filetype = vim.bo[buf].filetype
+
             if vim.tbl_contains(skip_filetyupes, filetype) then
                 -- skip certain filetypes
-            elseif vim.api.nvim_buf_get_option(buf, 'modified') then
-                print("Buffer " .. buf .. " has unsaved changes. Skipping.")
+            elseif vim.bo[buf].modified then
+                local full_path = vim.api.nvim_buf_get_name(buf)
+                local relative_path = vim.fn.fnamemodify(full_path, ':.')
+                print("Buffer " .. relative_path .. " has unsaved changes. Skipping.")
             else
                 vim.api.nvim_buf_delete(buf, {})
             end

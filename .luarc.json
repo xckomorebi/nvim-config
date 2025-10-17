@@ -21,7 +21,8 @@
                 "~/.local/share/nvim/lazy/telescope-live-grep-args.nvim",
                 "~/.local/share/nvim/lazy/nvim-cmp",
                 "~/.local/share/nvim/lazy/lsp-zero.nvim",
-                "~/.local/share/nvim/lazy/sidekick.nvim"
+                "~/.local/share/nvim/lazy/sidekick.nvim",
+                "~/.local/share/nvim/lazy/noice.nvim"
             ]
         }
     }
