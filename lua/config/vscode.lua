@@ -9,12 +9,4 @@ end
 vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 
-keymap("n", "gr", "editor.action.goToReferences")
-keymap("n", "gi", "editor.action.goToImplementation")
 keymap("n", "<leader>fp", "workbench.action.quickOpen")
-
-vim.keymap.del("n", "grt")
-vim.keymap.del("n", "grr")
-vim.keymap.del("n", "gri")
-vim.keymap.del("n", "gra")
-vim.keymap.del("n", "grn")
