@@ -13,7 +13,8 @@ vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
     local buffers = vim.api.nvim_list_bufs()
     local skip_filetypes = {
         "NvimTree",
-        "qf"
+        "qf",
+        "toggleterm"
     }
 
     local delete_count = 0

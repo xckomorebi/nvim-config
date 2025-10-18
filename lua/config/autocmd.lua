@@ -28,3 +28,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         })
     end,
 })
+
+vim.api.nvim_create_autocmd("TermEnter", {
+    pattern = { "term://*toggleterm#*" },
+    group = "General",
+
+    callback = function()
+        vim.keymap.set({ "n", "t" },
+            "<Esc><Esc>", "<cmd>ToggleTerm<cr>",
+            { buffer = 0 })
+    end,
+})
