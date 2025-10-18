@@ -11,6 +11,7 @@ keyset("n", "<A-F>", vim.lsp.buf.format, { desc = "Format code", silent = true }
 
 keyset("n", "<A-O>",
     function()
+        ---@diagnostic disable-next-line
         vim.lsp.buf.code_action { context = { only = { "source.organizeImports" } }, apply = true }
     end,
     { desc = "Organize imports", silent = true }
