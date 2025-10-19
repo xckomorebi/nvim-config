@@ -30,7 +30,9 @@ return {
                 -- `false` will disable the whole extension
                 enable = true,
                 disable = function(lang, buf)
-                    if lang == "html" then
+                    local disabled_filetype = { "html", "tmux" }
+
+                    if vim.tbl_contains(disabled_filetype, lang) then
                         print("disabled")
                         return true
                     end
