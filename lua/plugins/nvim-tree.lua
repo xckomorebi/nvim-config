@@ -19,11 +19,6 @@ return {
         { "<leader>r", "<cmd>NvimTreeFindFile<cr>", desc = "Reveal file" },
     },
 
-    -- stupid hack to let nvim-tree execute highlight linking after colorscheme is loaded
-    dependencies = {
-        "sainnhe/sonokai"
-    },
-
     lazy = false,
 
     cmd = {
