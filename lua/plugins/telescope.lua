@@ -52,7 +52,7 @@ return {
         { "<leader>fs", "<cmd>Telescope git_status<cr>",           desc = "Git status" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",              desc = "Buffers" },
         { "<leader>fh", "<cmd>Telescope help_tags<cr>",            desc = "Help tags" },
-        { "<leader>pp", "<cmd>Telescope commands<cr>",             desc = "Commands" },
+        { "<leader>fc", "<cmd>Telescope commands<cr>",             desc = "Commands" },
         { "<leader>fd", "<cmd>Telescope diagnostics<cr>",          desc = "Show Diagnostics" },
         { "<leader>fk", "<cmd>Telescope keymaps<cr>",              desc = "Show Keymaps" },
 

@@ -19,6 +19,11 @@ return {
         nes = {
             enabled = true,
             auto_trigger = true,
+            keymap = {
+                dismiss = "<Esc>",
+                accept = false,
+                accept_and_goto = "<leader>p"
+            }
         }
     }
 }
