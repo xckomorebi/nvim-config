@@ -20,7 +20,5 @@ return {
             enabled = true,
             auto_trigger = true,
         }
-    },
-
-    enabled = false
+    }
 }
