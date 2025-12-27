@@ -4,7 +4,11 @@ return {
     opts = {
         focus_after_send = true,
         terminal = {
-            provider = "native"
+            provider = "native",
+            split_width_percentage = 0.35
+        },
+        diff_opts = {
+            open_in_current_tab = false
         }
     },
     keys = {

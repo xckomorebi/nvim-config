@@ -11,16 +11,16 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 ---@diagnostic disable-next-line
-vim.api.nvim_create_autocmd("TermEnter", {
-    pattern = { "term://*toggleterm#*" },
-    group = "General",
-
-    callback = function()
-        vim.keymap.set({ "n", "t" },
-            "<Esc><Esc>", "<cmd>ToggleTerm<cr>",
-            { buffer = 0 })
-    end,
-})
+-- vim.api.nvim_create_autocmd("TermEnter", {
+--     pattern = { "term://*toggleterm#*" },
+--     group = "General",
+--
+--     callback = function()
+--         vim.keymap.set({ "n", "t" },
+--             "<Esc><Esc>", "<cmd>ToggleTerm<cr>",
+--             { buffer = 0 })
+--     end,
+-- })
 
 vim.api.nvim_create_autocmd("CursorHold", {
     group = "General",
