@@ -22,9 +22,13 @@ vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
     for _, buf in ipairs(buffers) do
         if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
             local filetype = vim.bo[buf].filetype
+            local buftype = vim.bo[buf].buftype
+            local buf_name = vim.api.nvim_buf_get_name(buf)
 
             if vim.tbl_contains(skip_filetypes, filetype) then
                 -- skip certain filetypes
+            elseif buftype == "terminal" and buf_name:match("claude") then
+                -- skip Claude Code terminal buffers
             elseif vim.bo[buf].modified then
                 local full_path = vim.api.nvim_buf_get_name(buf)
                 local relative_path = vim.fn.fnamemodify(full_path, ':.')
