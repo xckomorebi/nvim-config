@@ -20,7 +20,8 @@ vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
     local delete_count = 0
 
     for _, buf in ipairs(buffers) do
-        if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
+        -- if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
+        if buf ~= current_buf then
             local filetype = vim.bo[buf].filetype
             local buftype = vim.bo[buf].buftype
             local buf_name = vim.api.nvim_buf_get_name(buf)
