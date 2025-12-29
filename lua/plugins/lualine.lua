@@ -12,18 +12,20 @@ return {
             },
         },
 
-        -- sections = {
-        --     lualine_c = {
-        --         "buffers",
-        --     },
-        -- },
-        -- inactive_sections = {
-        --     lualine_a = {},
-        --     lualine_b = {},
-        --     lualine_c = {},
-        --     lualine_x = {},
-        --     lualine_y = {},
-        --     lualine_z = {}
-        -- }
+        ---@diagnostic disable: undefined-field
+        sections = {
+            lualine_x = {
+                {
+                    require("noice").api.status.command.get,
+                    cond = require("noice").api.status.command.has,
+                    color = { fg = "#ff9e64" },
+                },
+                {
+                    require("noice").api.status.mode.get,
+                    cond = require("noice").api.status.mode.has,
+                    color = { fg = "#ff9e64" },
+                }
+            }
+        }
     }
 }
