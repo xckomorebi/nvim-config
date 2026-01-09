@@ -13,7 +13,7 @@ return {
     opts = {
         suppressed_dirs = { "~/" },
 
-        bypass_save_filetypes = {
+        close_filetypes_on_save = {
             "NvimTree",
         },
         session_lens = {
