@@ -1,6 +1,6 @@
 local keyset = vim.keymap.set
 
-keyset("t", "<Esc><Esc>", "<C-\\><C-N>")
+keyset("t", "<C-q>", "<C-\\><C-N>", { desc = "Go to Normal mode" })
 
 keyset("n", "<leader>tu", "<cmd>ToggleSonoakiTransparency<cr>")
 

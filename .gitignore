@@ -1,3 +1,5 @@
 lazy-lock.json
 
 *.bak
+
+.claude/settings.local.json
