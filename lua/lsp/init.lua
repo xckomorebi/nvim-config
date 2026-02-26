@@ -3,6 +3,7 @@ require("lsp.luals")
 require("lsp.clangd")
 require("lsp.pyright")
 require("lsp.jsonls")
+require("lsp.tsserver")
 
 vim.lsp.enable({
     "gopls",
@@ -10,6 +11,7 @@ vim.lsp.enable({
     "luals",
     "clangd",
     "jsonls",
+    "ts_ls",
 })
 
 vim.diagnostic.config({
