@@ -27,7 +27,7 @@ return {
             override = {
                 ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                 ["vim.lsp.util.stylize_markdown"] = true,
-                ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+                ["cmp.entry.get_documentation"] = true,
             },
         },
         presets = {
@@ -38,6 +38,34 @@ return {
             lsp_doc_border = false,
         },
         routes = {
+            {
+                filter = {
+                    event = "msg_show",
+                    find = "%d+ lines? yanked",
+                },
+                opts = { skip = true },
+            },
+            {
+                filter = {
+                    event = "msg_show",
+                    find = "%d+ fewer lines?",
+                },
+                opts = { skip = true },
+            },
+            {
+                filter = {
+                    event = "msg_show",
+                    find = "%d+ more lines?",
+                },
+                opts = { skip = true },
+            },
+            {
+                filter = {
+                    event = "msg_show",
+                    find = "%d+ lines? less",
+                },
+                opts = { skip = true },
+            },
             {
                 view = "cmdline_output",
                 filter = {
