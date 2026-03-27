@@ -1,4 +1,3 @@
-
 return {
     "VonHeikemen/lsp-zero.nvim",
 
@@ -51,8 +50,26 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-f>"] = cmp_action.luasnip_jump_forward(),
                 ["<C-b>"] = cmp_action.luasnip_jump_backward(),
-                -- ["<Tab>"] = cmp_action.luasnip_supertab(),
-                -- ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                    local luasnip = require("luasnip")
+                    if luasnip.locally_jumpable(1) then
+                        luasnip.jump(1)
+                    elseif cmp.visible() then
+                        cmp.confirm({ select = true })
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
+                ["<S-Tab>"] = cmp.mapping(function(fallback)
+                    local luasnip = require("luasnip")
+                    if luasnip.locally_jumpable(-1) then
+                        luasnip.jump(-1)
+                    elseif cmp.visible() then
+                        cmp.select_prev_item(cmp_select)
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
             }),
         })
     end

@@ -27,5 +27,7 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos"
 vim.opt.formatoptions = vim.opt.formatoptions - "o" - "r"
 
 vim.opt.fillchars = {
-    eob = " "
+    eob = " ",
+    diff = " ",  -- character shown in filler lines
 }
+
