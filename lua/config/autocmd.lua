@@ -1,5 +1,12 @@
 vim.api.nvim_create_augroup("General", {})
 
+vim.o.autoread = true
+local autoread_timer = vim.uv.new_timer()
+---@diagnostic disable-next-line: need-check-nil
+autoread_timer:start(0, 1000, vim.schedule_wrap(function()
+    vim.cmd("silent! checktime")
+end))
+
 ---@diagnostic disable-next-line
 vim.api.nvim_create_autocmd("User", {
     pattern = "TelescopePreviewerLoaded",
@@ -9,18 +16,6 @@ vim.api.nvim_create_autocmd("User", {
     group = "General",
     desc = "Enable Line Number in Telescope Preview",
 })
-
----@diagnostic disable-next-line
--- vim.api.nvim_create_autocmd("TermEnter", {
---     pattern = { "term://*toggleterm#*" },
---     group = "General",
---
---     callback = function()
---         vim.keymap.set({ "n", "t" },
---             "<Esc><Esc>", "<cmd>ToggleTerm<cr>",
---             { buffer = 0 })
---     end,
--- })
 
 vim.api.nvim_create_autocmd("CursorHold", {
     group = "General",

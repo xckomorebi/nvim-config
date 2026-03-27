@@ -1,16 +1,14 @@
 return {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
-    ---@type PartialClaudeCodeConfig
     opts = {
         focus_after_send = false,
         terminal = {
             provider = "native",
             split_width_percentage = 0.35,
             split_side = "right",
-            show_native_term_exit_tip = true,
+            show_native_term_exit_tip = false,
             auto_close = true,
-            env = {},
             snacks_win_opts = {},
         },
         diff_opts = {
@@ -22,7 +20,6 @@ return {
             on_new_file_reject = "keep_empty",
         }
     },
-
 
     keys = {
         { "<leader>aa", "<cmd>ClaudeCode<cr>",            desc = "Toggle Claude" },
