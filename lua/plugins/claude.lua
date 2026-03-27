@@ -2,7 +2,7 @@ return {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     opts = {
-        focus_after_send = false,
+        focus_after_send = true,
         terminal = {
             provider = "native",
             split_width_percentage = 0.35,
