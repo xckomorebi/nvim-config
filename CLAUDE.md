@@ -35,39 +35,36 @@ return {
 ```
 
 ### Language Server Protocol
-- **LSP manager**: lsp-zero.nvim
-- **LSP directory**: `lua/lsp/` - each language server has its own configuration
-- **Supported LSPs**: gopls, pyright, luals, clangd
-- **Auto-formatting**: Enabled for Go files on save
-- **Diagnostics**: Show on cursor hold
+- **LSP setup**: Native Neovim 0.10+ API via `vim.lsp.enable()` in `lua/lsp/init.lua`
+- **LSP directory**: `lua/lsp/` - each language server has its own configuration file
+- **Supported LSPs**: gopls, pyright, luals, clangd, jsonls, ts_ls
+- **Auto-formatting**: Go files run organize-imports + format on save (`BufWritePre`)
+- **Diagnostics**: Show floating window on `CursorHold` (configured in `lua/config/autocmd.lua`)
 
 ### AI Integration
 - **Primary AI**: Claude Code (`claudecode.nvim`) - configured in `lua/plugins/claude.lua`
-- **Key mappings**: `<leader>aa` to toggle, `<leader>af` to focus, `<leader>ar` to resume
+- **Key mappings**: `<leader>aa` to toggle, `<leader>af` to focus, `<leader>at` to send selection (visual)
 - **Alternative**: Sidekick (currently disabled in `lua/plugins/sidekick.lua`)
 - **Code completion**: GitHub Copilot (`lua/plugins/copilot.lua`)
 
-## Common Development Tasks
-
-### Adding a New Plugin
-1. Create a new `.lua` file in `lua/plugins/` following the plugin configuration pattern
-2. The plugin will be automatically loaded via `{ import = "plugins" }` in `lazy.lua:28`
-3. Run `:Lazy sync` in Neovim to install the plugin
-
-### Updating Plugins
-- Run `:Lazy sync` in Neovim to update all plugins
-- Plugin versions are locked in `lazy-lock.json`
-
-### Configuring LSP for a New Language
-1. Create a new configuration file in `lua/lsp/` (e.g., `rust.lua`)
-2. Add the LSP server name to `vim.lsp.enable()` in `lua/lsp/init.lua:6-11`
-3. The LSP will be automatically set up via lsp-zero.nvim
-
-### Key Mapping Conventions
+## Key Mapping Conventions
 - Global leader is Space (` `)
 - Local leader is backslash (`\`)
 - Plugin-specific mappings are defined in each plugin's `keys` table
 - Core mappings are in `lua/config/remap.lua`
+- `<A-F>`: LSP format, `<A-O>`: LSP organize imports
+- `<C-->` / `<C-_>`: Go to previous jump location (`<C-o>`)
+- `<leader>tu`: Toggle sonokai theme transparency
+
+### Telescope Key Mappings
+- `<leader>fp/fP`: Find files / git-aware find
+- `<leader>fg`: Live grep (with args support)
+- `<leader>fs/fb/fd/fk`: Git status / Buffers / Diagnostics / Keymaps
+- `<C-]>`: LSP go-to-definition, `grr/gri/grt/gO`: LSP references/implementations/types/symbols
+
+## Custom Commands
+- `:ToggleSonoakiTransparency`: Toggle background transparency for the sonokai theme
+- `:DeleteAllOtherBuffers`: Close all buffers except current (skips NvimTree, toggleterm, Claude terminals, and unsaved buffers)
 
 ## Important Configuration Details
 
@@ -77,29 +74,20 @@ return {
 - **File type detection**: `ftdetect/` directory
 - **File type plugins**: `ftplugin/` directory
 
+### Notable Behaviors
+- `autoread` is enabled with a 1-second polling timer (`checktime`) so external file changes are auto-detected
+- VSCode-specific configuration in `lua/config/vscode.lua` when `vim.g.vscode` is true
+
 ### Performance Considerations
 - Treesitter disabled for files >100KB
 - Auto-install of missing parsers
 - Lazy loading where possible
 
-### Conditional Loading
-- VSCode-specific configuration in `lua/config/vscode.lua` when `vim.g.vscode` is true
-- Plugin-specific conditions (e.g., `enabled = false` for sidekick)
+### Adding a New Plugin
+1. Create a new `.lua` file in `lua/plugins/` following the plugin configuration pattern
+2. The plugin will be automatically loaded via `{ import = "plugins" }` in `lazy.lua`
+3. Run `:Lazy sync` in Neovim to install the plugin
 
-## Key File References
-
-- `init.lua`: Main entry point
-- `lua/config/lazy.lua`: Plugin manager setup
-- `lua/plugins/claude.lua`: Claude Code AI assistant configuration
-- `lua/plugins/telescope.lua`: Fuzzy finder with git-aware file search
-- `lua/lsp/init.lua`: LSP setup and diagnostics
-- `lua/lsp/gopls.lua`: Go language server configuration
-- `ftplugin/go.lua`: Go-specific editor settings
-- `lazy-lock.json`: Plugin version lock file
-
-## Recent Changes (from git history)
-- Added treesitter-context plugin for contextual code display
-- Set filetype for Go skipped_tests.txt files
-- Switched from sidekick to claudecode.nvim as primary AI assistant
-- Configured gopls workspace folder merging
-- Improved Copilot keybindings
+### Configuring LSP for a New Language
+1. Create a new configuration file in `lua/lsp/` (e.g., `rust.lua`)
+2. Add the LSP server name to `vim.lsp.enable()` in `lua/lsp/init.lua`
