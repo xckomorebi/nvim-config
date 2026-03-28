@@ -12,7 +12,7 @@ return {
         t("--header \"Authorization: Bearer "), i(1, "$PAASTEST_API_KEY"), t("\""),
     }),
 
-    s("curl-body", {
+    s("body", {
         t({ "--data '{",
             "  \"model\": \"" }), i(1, "mock-model-if-dispatchter"), t({ "\",",
             "  \"messages\": [",

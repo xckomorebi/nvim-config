@@ -10,7 +10,7 @@ return {
         local luasnip = require("luasnip")
 
         -- Load VSCode-style snippets from friendly-snippets and any local snippets
-        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load( { paths = vim.fn.getcwd() .. "/.vscode" } )
         -- Load lua-style snippets from ~/.config/nvim/snippets/
         require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets" })
 
