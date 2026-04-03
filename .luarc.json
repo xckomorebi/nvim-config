@@ -24,7 +24,8 @@
                 "~/.local/share/nvim/lazy/sidekick.nvim",
                 "~/.local/share/nvim/lazy/noice.nvim",
                 "~/.local/share/nvim/lazy/nvim-tree.lua",
-                "~/.local/share/nvim/lazy/claudecode.nvim"
+                "~/.local/share/nvim/lazy/claudecode.nvim",
+                "~/.local/share/nvim/lazy/LuaSnip"
             ]
         }
     }

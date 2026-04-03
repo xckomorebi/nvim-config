@@ -7,6 +7,16 @@ autoread_timer:start(0, 1000, vim.schedule_wrap(function()
     vim.cmd("silent! checktime")
 end))
 
+
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
+    pattern = "term://*",
+    callback = function()
+        vim.schedule(function()
+            vim.cmd("startinsert")
+        end)
+    end,
+})
+
 ---@diagnostic disable-next-line
 vim.api.nvim_create_autocmd("User", {
     pattern = "TelescopePreviewerLoaded",
