@@ -12,7 +12,6 @@ return {
         "nvim-lua/plenary.nvim",
         "BurntSushi/ripgrep",
         "nvim-telescope/telescope-live-grep-args.nvim",
-        "fannheyward/telescope-coc.nvim",
     },
 
     config = function()
@@ -24,9 +23,21 @@ return {
                 sorting_strategy = "ascending",
                 mappings = {
                     n = {
-                        d = "delete_buffer",
+                        x = "delete_buffer",
                     }
                 }
+            },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                    no_ignore = true,
+                    file_ignore_patterns = {
+                        "^%.git/",
+                        "^node_modules/",
+                        "^%.DS_Store",
+                        "^__pycache__/", "^%.venv/", "^venv/"
+                    },
+                },
             },
             extensions = {
                 live_grep_args = {
@@ -41,13 +52,12 @@ return {
             }
         })
 
-        telescope.load_extension("coc")
         telescope.load_extension("live_grep_args")
     end,
 
     keys = {
-        { "<leader>fp", "<cmd>Telescope find_files<cr>",           desc = "Find files" },
-        { "<leader>fP", find_files_or_git_files,                   desc = "Find files (git-aware)" },
+        { "<leader>fP", "<cmd>Telescope find_files<cr>",           desc = "Find files" },
+        { "<leader>fp", find_files_or_git_files,                   desc = "Find files (git-aware)" },
         { "<leader>fg", "<cmd>Telescope live_grep_args<cr>",       desc = "Live grep" },
         { "<leader>fs", "<cmd>Telescope git_status<cr>",           desc = "Git status" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",              desc = "Buffers" },
