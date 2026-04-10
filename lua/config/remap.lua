@@ -8,7 +8,7 @@ keyset("t", "<C-w>j", "<C-\\><C-N><C-w>j", { desc = "Go to lower window" })
 keyset("t", "<C-w>k", "<C-\\><C-N><C-w>k", { desc = "Go to upper window" })
 keyset("t", "<C-w>l", "<C-\\><C-N><C-w>l", { desc = "Go to right window" })
 
-keyset("n", "<leader>tu", "<cmd>ToggleSonoakiTransparency<cr>")
+keyset("n", "<leader>tu", "<cmd>ToggleSonokaiTransparency<cr>")
 
 keyset("n", "<C-->", "<C-o>", { desc = "Go to previous location" })
 keyset("n", "<C-_>", "<C-o>", { desc = "Go to previous location" })

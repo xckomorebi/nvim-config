@@ -54,7 +54,7 @@ return {
 - Core mappings are in `lua/config/remap.lua`
 - `<A-F>`: LSP format, `<A-O>`: LSP organize imports
 - `<C-->` / `<C-_>`: Go to previous jump location (`<C-o>`)
-- `<leader>tu`: Toggle sonokai theme transparency
+- `<leader>tu`: Toggle Sonokai theme transparency
 
 ### Telescope Key Mappings
 - `<leader>fp/fP`: Find files / git-aware find
@@ -63,7 +63,7 @@ return {
 - `<C-]>`: LSP go-to-definition, `grr/gri/grt/gO`: LSP references/implementations/types/symbols
 
 ## Custom Commands
-- `:ToggleSonoakiTransparency`: Toggle background transparency for the sonokai theme
+- `:ToggleSonokaiTransparency`: Toggle background transparency for the sonokai theme
 - `:DeleteAllOtherBuffers`: Close all buffers except current (skips NvimTree, toggleterm, Claude terminals, and unsaved buffers)
 
 ## Important Configuration Details
