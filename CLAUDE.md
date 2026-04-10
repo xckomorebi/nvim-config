@@ -39,13 +39,20 @@ return {
 - **LSP directory**: `lua/lsp/` - each language server has its own configuration file
 - **Supported LSPs**: gopls, pyright, luals, clangd, jsonls, ts_ls
 - **Auto-formatting**: Go files run organize-imports + format on save (`BufWritePre`)
-- **Diagnostics**: Show floating window on `CursorHold` (configured in `lua/config/autocmd.lua`)
+- **Diagnostics**: Show floating window on `CursorHold` (configured in `lua/lsp/init.lua`)
 
 ### AI Integration
 - **Primary AI**: Claude Code (`claudecode.nvim`) - configured in `lua/plugins/claude.lua`
 - **Key mappings**: `<leader>aa` to toggle, `<leader>af` to focus, `<leader>at` to send selection (visual)
 - **Alternative**: Sidekick (currently disabled in `lua/plugins/sidekick.lua`)
 - **Code completion**: GitHub Copilot (`lua/plugins/copilot.lua`)
+
+### Other Notable Plugins
+- **noice.nvim**: Replaces UI for messages, cmdline, and popupmenu
+- **which-key.nvim**: Shows key binding hints on leader key press
+- **auto-session**: Automatic session save/restore per directory
+- **neotest**: Test runner UI (`lua/plugins/neotest.lua`)
+- **nvim-surround** / **nvim-autopairs**: Text object surround and auto-pair completion
 
 ## Key Mapping Conventions
 - Global leader is Space (` `)
@@ -69,9 +76,11 @@ return {
 ## Important Configuration Details
 
 ### File Type Handling
-- **Go**: Tabs instead of spaces, custom listchars (configured in `ftplugin/go.lua`)
+- **Go**: Tabs instead of spaces, custom listchars (`ftplugin/go.lua`, `ftplugin/gomod.lua`)
+- **JSON**: Auto-detects indent size from file content (`ftplugin/json.lua`)
+- **JavaScript**: Per-file settings in `ftplugin/javascript.lua`
 - **General**: 4-space tabs, line numbers, smart case search
-- **File type detection**: `ftdetect/` directory
+- **File type detection**: `ftdetect/` directory (dockerfile, gitignore)
 - **File type plugins**: `ftplugin/` directory
 
 ### Notable Behaviors
