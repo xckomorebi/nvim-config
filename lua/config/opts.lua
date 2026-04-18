@@ -23,6 +23,7 @@ vim.o.signcolumn = "yes"
 vim.o.cursorline = true
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.equalalways = false
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos"
 vim.opt.formatoptions = vim.opt.formatoptions - "o" - "r"
