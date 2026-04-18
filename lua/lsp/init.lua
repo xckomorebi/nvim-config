@@ -4,6 +4,7 @@ require("lsp.clangd")
 require("lsp.pyright")
 require("lsp.jsonls")
 require("lsp.tsserver")
+require("lsp.rust")
 
 vim.lsp.enable({
     "gopls",
@@ -12,6 +13,7 @@ vim.lsp.enable({
     "clangd",
     "jsonls",
     "ts_ls",
+    "rust_analyzer",
 })
 
 vim.diagnostic.config({
