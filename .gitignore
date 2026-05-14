@@ -3,3 +3,6 @@ lazy-lock.json
 *.bak
 
 .claude/settings.local.json
+
+snippets/*
+!snippets/.gitkeep
