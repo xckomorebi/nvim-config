@@ -2,6 +2,7 @@ return {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     opts = {
+        terminal_cmd = "claude --dangerously-skip-permissions",
         focus_after_send = true,
         terminal = {
             provider = "native",
