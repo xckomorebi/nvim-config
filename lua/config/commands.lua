@@ -25,6 +25,27 @@ vim.api.nvim_create_user_command("FormatJSON", function(opts)
     end
 end, { range = true })
 
+vim.api.nvim_create_user_command("RestartLsp", function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local clients = vim.lsp.get_clients({ bufnr = bufnr })
+
+    if #clients == 0 then
+        vim.notify("No LSP clients attached to current buffer", vim.log.levels.WARN)
+        return
+    end
+
+    local names = {}
+    for _, client in ipairs(clients) do
+        table.insert(names, client.name)
+        client:stop(true)
+    end
+
+    vim.defer_fn(function()
+        vim.api.nvim_exec_autocmds("FileType", { buffer = bufnr })
+        vim.notify("Reattached LSP client(s): " .. table.concat(names, ", "))
+    end, 100)
+end, {})
+
 vim.api.nvim_create_user_command("DeleteAllOtherBuffers", function()
     local current_buf = vim.api.nvim_get_current_buf()
     local buffers = vim.api.nvim_list_bufs()

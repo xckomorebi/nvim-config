@@ -71,6 +71,8 @@ return {
 
 ## Custom Commands
 - `:ToggleSonokaiTransparency`: Toggle background transparency for the sonokai theme
+- `:FormatJSON`: Format JSON in the current line or visual selection using `jq`
+- `:RestartLsp`: Stop and restart all LSP clients attached to the current buffer
 - `:DeleteAllOtherBuffers`: Close all buffers except current (skips NvimTree, toggleterm, Claude terminals, and unsaved buffers)
 
 ## Important Configuration Details
