@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
             return
         end
 
-        if vim.fn.filereadable(vim.fn.getcwd() .. "/pyproject.toml") == 1 then
+        if vim.fn.isdirectory(vim.fn.getcwd() .. "/.venv") == 1 then
             return
         end
 
