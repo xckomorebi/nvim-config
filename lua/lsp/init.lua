@@ -1,14 +1,14 @@
 require("lsp.gopls")
 require("lsp.luals")
 require("lsp.clangd")
-require("lsp.pyright")
+require("lsp.ty")
 require("lsp.jsonls")
 require("lsp.tsserver")
 require("lsp.rust")
 
 vim.lsp.enable({
     "gopls",
-    "pyright",
+    "ty",
     "luals",
     "clangd",
     "jsonls",

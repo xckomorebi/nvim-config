@@ -37,7 +37,7 @@ return {
 ### Language Server Protocol
 - **LSP setup**: Native Neovim 0.10+ API via `vim.lsp.enable()` in `lua/lsp/init.lua`
 - **LSP directory**: `lua/lsp/` - each language server has its own configuration file
-- **Supported LSPs**: gopls, pyright, luals, clangd, jsonls, ts_ls
+- **Supported LSPs**: gopls, ty, luals, clangd, jsonls, ts_ls
 - **Auto-formatting**: Go files run organize-imports + format on save (`BufWritePre`)
 - **Diagnostics**: Show floating window on `CursorHold` (configured in `lua/lsp/init.lua`)
 
