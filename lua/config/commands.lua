@@ -12,13 +12,18 @@ vim.api.nvim_create_user_command("FormatJSON", function(opts)
     local lines = vim.api.nvim_buf_get_lines(0, opts.line1 - 1, opts.line2, false)
     local input = table.concat(lines, "\n")
 
-    local result = vim.fn.system({ "jq", "." }, input)
+    local prefix, json, suffix = input:match("(.-)'([{%[].-[%]}])'(.*)")
+    local target = json or input
+
+    local result = vim.fn.system({ "jq", "." }, target)
 
     if vim.v.shell_error == 0 then
-        local formatted = vim.split(result, "\n")
-        if formatted[#formatted] == "" then
-            table.remove(formatted)
+        if result:sub(-1) == "\n" then
+            result = result:sub(1, -2)
         end
+
+        local output = json and (prefix .. "'" .. result .. "'" .. suffix) or result
+        local formatted = vim.split(output, "\n")
         vim.api.nvim_buf_set_lines(0, opts.line1 - 1, opts.line2, false, formatted)
     else
         vim.notify("Invalid JSON:\n" .. result, vim.log.levels.ERROR)
