@@ -15,7 +15,16 @@ vim.api.nvim_create_user_command("FormatJSON", function(opts)
     local prefix, json, suffix = input:match("(.-)'([{%[].-[%]}])'(.*)")
     local target = json or input
 
-    local result = vim.fn.system({ "jq", "." }, target)
+    -- With no args, default to `jq .`; otherwise run the given command.
+    local cmd = { "jq", "." }
+    if opts.args ~= "" then
+        cmd = {}
+        for word in opts.args:gmatch("%S+") do
+            table.insert(cmd, word)
+        end
+    end
+
+    local result = vim.fn.system(cmd, target)
 
     if vim.v.shell_error == 0 then
         if result:sub(-1) == "\n" then
@@ -28,7 +37,7 @@ vim.api.nvim_create_user_command("FormatJSON", function(opts)
     else
         vim.notify("Invalid JSON:\n" .. result, vim.log.levels.ERROR)
     end
-end, { range = true })
+end, { range = true, nargs = "*", complete = "shellcmd" })
 
 vim.api.nvim_create_user_command("RestartLsp", function()
     local bufnr = vim.api.nvim_get_current_buf()
